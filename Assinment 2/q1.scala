@@ -1,17 +1,19 @@
 import scala.io.StdIn.readInt;
 
-object q6 extends App{
-    def fibo(x : Int) : Int = x match{
-        case x if x == 0 => 0;
-        case x if x == 1 => 1;
-        case _ => fibo(x - 1) + fibo(x- 2);
+object q1 extends App {
+    def gcd(a:Int, b:Int):Int=b match{
+        case 0 => a;
+        case x if x>a => gcd(x,a);
+        case x => gcd(x,a%x);
     }
-    def fiboSeq(x:Int):Unit= {
-        if (x > 0) fiboSeq(x - 1);
-        println(fibo(x));
+    def prime(a:Int, b:Int = 2): Boolean = b match{
+        case x if(x==a)=>true;
+        case x if gcd(a,x)>1 => false;
+        case x => prime(a,x+1);
     }
 
-    print("Input a value to get fibonacci sequence :");
+    print("Input a value:");
     var value = readInt();
-    fiboSeq(value);
+    print(prime(value));
+    
 }
