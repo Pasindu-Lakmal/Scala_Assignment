@@ -1,19 +1,19 @@
-import scala.io.StdIn.readInt;
+package Exersice
 
 object q1 extends App {
-    def gcd(a:Int, b:Int):Int=b match{
-        case 0 => a;
-        case x if x>a => gcd(x,a);
-        case x => gcd(x,a%x);
-    }
-    def prime(a:Int, b:Int = 2): Boolean = b match{
-        case x if(x==a)=>true;
-        case x if gcd(a,x)>1 => false;
-        case x => prime(a,x+1);
-    }
+  def gcd(x:Int, y:Int):Int=y match {
+    case 0 => x
+    case y if (y>x)=>gcd(y,x)
+    case _ =>gcd(y,x%y)
+  }
 
-    print("Input a value:");
-    var value = readInt();
-    print(prime(value));
-    
+  def prime(p:Int, n:Int=2):Boolean=n match {
+    case x if(p==x)=>true
+    case x if (gcd(p,x)>1)=>false
+    case x=>prime(p,x+1)
+  }
+
+  println(prime(5))
+  println(prime(8))
+
 }
