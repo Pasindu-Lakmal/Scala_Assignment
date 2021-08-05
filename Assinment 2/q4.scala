@@ -1,20 +1,13 @@
-import scala.io.StdIn.readInt;
+package Exersice
 
-object q4 extends App {
-    def check(a:Int) : Unit = {
-        if(a%2 == 0) {
-            print(a);
-            printf(" is even\n");
-        }
-        else if(a%2 != 0) {
-            print(a);
-            printf(" is odd\n");
-        }
-        if(a > 1)
-        check(a - 1);
-    }
+object q4 extends App{
+  def isEven(n:Int):Boolean=n match{
+    case 0 => true
+    case _ => isOdd(n-1)
+  }
 
-    print("Enter a number to get odd even values: ");
-    var value = readInt();
-    check(value);
+  def isOdd(n:Int):Boolean= !(isEven(n))
+  println(isEven(2), isEven(3))
+  println(isOdd(2), isOdd(3))
+
 }
