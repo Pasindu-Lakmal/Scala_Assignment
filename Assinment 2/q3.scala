@@ -1,5 +1,3 @@
-package Exersice
-
 object q3 extends App {
   def sum(n:Int):Int=
     if(n==0)  0
