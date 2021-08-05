@@ -1,5 +1,3 @@
-package Exersice
-
 object q4 extends App{
   def isEven(n:Int):Boolean=n match{
     case 0 => true
