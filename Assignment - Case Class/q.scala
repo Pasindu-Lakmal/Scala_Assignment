@@ -1,4 +1,4 @@
-case class Point(var x: Int, var y: Int) {
+case class q(var x: Int, var y: Int) {
     def add(a:Point) = new Point(this.x + a.x, this.y + a.y)
 
     def move(x:Int, y:Int):Unit = {
