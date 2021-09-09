@@ -17,9 +17,9 @@ object q3 extends App{
     def deposit(amount:Double)={
       this.balance = this.balance + amount
     }
-    def transfer(a:Account,b:Double)={
-      this.withdraw(b)
-      a.deposit(b)
+    def transfer(acc:Account,value:Double)={
+      this.withdraw(value)
+      acc.deposit(value)
     }
     override def toString = s"[${nic} : ${accno} : ${balance}]"
 
